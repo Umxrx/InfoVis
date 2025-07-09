@@ -5,7 +5,7 @@ from sklearn.ensemble import GradientBoostingRegressor
 import joblib
 
 # 1. Load dataset
-df = pd.read_csv('cost_of_living.csv')  # Dataset containing features and Absolute_Poverty
+df = pd.read_csv('../dataset/cost_of_living.csv')  # Dataset containing features and Absolute_Poverty
 
 # 2. Prepare features (exclude 'State' and 'District') and target ('Absolute_Poverty')
 X = df.drop(columns=['State', 'District', 'Absolute_Poverty'])
@@ -25,5 +25,5 @@ model = GradientBoostingRegressor(random_state=42)
 model.fit(X_train, y_train)
 
 # 6. Save the trained model and label encoder to .pkl files
-joblib.dump(model, 'model/poverty_model.pkl')
-joblib.dump(le_strata, 'model/strata_encoder.pkl')
+joblib.dump(model, '../model/poverty_model.pkl')
+joblib.dump(le_strata, '../model/strata_encoder.pkl')
