@@ -7,8 +7,8 @@ app = Flask(__name__)
 CORS(app)
 
 # Load model and encoder
-model = joblib.load('model/poverty_model.pkl')
-le_strata = joblib.load('model/strata_encoder.pkl')
+model = joblib.load('../model/poverty_model.pkl')
+le_strata = joblib.load('../model/strata_encoder.pkl')
 
 @app.route('/predict', methods=['POST'])
 def predict():
